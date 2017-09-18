@@ -1,3 +1,15 @@
+/*
+ * CSC 230 - Intro to Computer Architecture
+ * Assignment 1
+ *
+ * Author: Ben Wolfe
+ * Student Number: V00205547
+ *
+ * Last modified: 18.09.2017
+ *
+ */
+
+
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -6,7 +18,7 @@
 #define DIVISOR 2
 
 void printBitArray(unsigned char theBits[SIZE_INT]) {
-	
+
 	int i = 0;
 	printf("0b");
 	for(i = 0; i < SIZE_INT; i++) {
@@ -17,19 +29,19 @@ void printBitArray(unsigned char theBits[SIZE_INT]) {
 
 void toBits(unsigned short value, unsigned char inBits[SIZE_INT]) {
 
-	unsigned short quotient = value;
-	unsigned short remainder = 0;
 	
-	unsigned short index = 0;
-	while(quotient != 0){
+	int bit_position = 0;
+	unsigned short mask;
+	unsigned short masked_number;
+	unsigned short shifted_number;
 
-		remainder = quotient % 2;
-		quotient = quotient / DIVISOR;
-
-		inBits[(SIZE_INT - index)-1] = remainder;
-
-		index++;
+	for(bit_position = 0; bit_position < SIZE_INT; bit_position++) {
+		mask = 1 << bit_position;
+		masked_number = mask & value;
+		shifted_number = masked_number >> bit_position;
+		inBits[SIZE_INT - bit_position - 1] = shifted_number;
 	}
+
 }
 
 unsigned short factorial(unsigned short num) {
