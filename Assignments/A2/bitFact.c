@@ -48,7 +48,9 @@ void toBits(unsigned short value, unsigned char inBits[SIZE_INT]) {
 }
 
 unsigned short factorial(unsigned short num) {
-	
+/* factorial takes in an unsigned short and calculates the
+   factorial recursively */
+
 	// Factorial returns 1 at the base case of 0
 	if(num == 0) {
 		return 1;
@@ -77,7 +79,7 @@ int main(int argc, char* argv[]){
 		} else if (conversion_value > 8) {
 			printf("Input cannot be larger than 8.  Enter a new value\n");
 			continue;
-		} 
+		}
 
 		// Perform the calculation and bit manipulation
 		factorial_value = factorial(conversion_value);
