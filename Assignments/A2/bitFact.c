@@ -72,14 +72,14 @@ int main(int argc, char* argv[]){
 		printf("\nInput a positive integer: ");
 		scanf("%hd", &conversion_value);
 
-		// Check that the user input is within a valid range
+		/* Check that the user input is within a valid range
 		if(conversion_value < 0) {
 			printf("Input cannot be negative. Enter a new value\n");
 			continue;
 		} else if (conversion_value > 8) {
 			printf("Input cannot be larger than 8.  Enter a new value\n");
 			continue;
-		}
+		} */
 
 		// Perform the calculation and bit manipulation
 		factorial_value = factorial(conversion_value);
